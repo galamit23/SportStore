@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // 1. import bootstrap && BrowserRouter 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-// 2. import class
+// 2. import classes
 import Nav from './Nav';
 import Home from './screens/Home'
 import Add from './screens/Add'
 import Store from './screens/Store'
 import AllProducts from './screens/AllProducts';
-import Accessories from './screens/store-category/Accessories'
+
 import Clothing from './screens/store-category/Clothing'
+import Accessories from './screens/store-category/Accessories'
 import Apparatus from './screens/store-category/Apparatus'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

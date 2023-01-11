@@ -9,6 +9,7 @@ export default function Clothing() {
         <li>object 2</li>
         <li>object 3</li>
         <li>object 4</li>
+        <li>object 5</li>
       </ul>
       <Outlet/>
     </div>

@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* background-image:  url(https://www1.lovethatdesign.com/wp-content/uploads/2016/12/20161208-Go-Sport-BRC-01.jpg);
+  background-repeat: no-repeat ;
+  background-size: 80%; */
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.allpro{
+  margin: 400px 0px 00px 800px;
+  background-color: #2ad170; 
+  border: 2 solid;
+  border-color: white;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10%;
+
+}
+
+

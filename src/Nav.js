@@ -9,7 +9,7 @@ export default function Nav() {
             <li className="nav-item"> <Link className="nav-link" to='/'>Home</Link></li>
             <li className="nav-item"> <Link className="nav-link" to='/add'>Add</Link></li>
             <li className="nav-item"> <Link className="nav-link" to='/store'>Store</Link></li>
-            <li className="nav-item"> <Link className="nav-link" to='/allproducts'>All Products</Link></li>
+
         </ul>        
     </nav>
       <Outlet/>

@@ -1,47 +1,63 @@
-import { useEffect, useState } from "react"
-import React  from 'react' 
-import Item from '../Item'
-import { collection , getDocs } from "firebase/firestore"
+// 1. useState - to store the data(array of documents from the db). 
+// 2. useEffect - to get all the data from the db. 
+import React, { useState, useEffect } from 'react'
+// 1. collection(firestore, path) - will get the entire collection from our db.  
+import { collection, getDocs } from 'firebase/firestore'
+// db - access to the db in firestore. 
 import { db } from '../firebase-config'
+// task - separate file for each task. 
+import Item from '../Item'
+import Add from './Add'
 
 export default function AllProducts() {
- 
-  const [items, setitems] = useState([])
-  
-  useEffect(()=>{
 
-    const getdb = async (db) => {
+    // 1. Array to store all the tasks from the DB
+    const [tasks, settasks] = useState([]);
+    // Open & close a window of -Add a new task
+    const [newTask, setNewTask] = useState(false)
 
-        const collect = collection(db, 'items');
+    // Call the db, find the right data - and store in `tasks` - useState. 
+    useEffect(()=>{
 
-        const itemsSnapshot = await getDocs(collect);
+        const getTasks = async (db) => {
+            // collection() - return all the collection for that path. 
+            const TasksCol = collection(db, 'clothes');
 
-        const itemsList = await itemsSnapshot.docs.map(doc =>(
-            {
-                id: doc.id, 
-                data: doc.data()
-            }
-        ))
-        setitems(itemsList)
-    }
+            // getDocs() - return all documents for our collection
+            const tasksSnapshot = await getDocs(TasksCol);
 
-    getdb(db);
+            const tasksList = await tasksSnapshot.docs.map(doc =>(
+                {
+                    id: doc.id, 
+                    // Retrieves all fields in the document as an object
+                    data: doc.data()
+                }
+            ))
+            settasks(tasksList)
+        }
 
-}, [items])
-  
-  return (
-    <div className="container">
-      <h2>AllProducts</h2>
-      
-      { items.map(item => (
-                <div key={item.id}>
+        // call the function: 
+        getTasks(db);
+
+    }, [tasks])
+    
+
+    return (
+        <div className='container'>
+    
+            <h2>Task manager</h2>
+
+            {/* If array is not empty - loop over it and show each task: */}
+            {tasks.length > 0 && tasks.map(task => (
+                <div key={task.id}>
                     <Item
-                    category={item.data.category}
-                    name={item.data.name}
-                    price={item.data.price}
-                    pic={item.data.pic}/>
+                    id={task.id}
+                    name={task.data.name}
+                    price={task.data.price}
+                    pic={task.data.pic}/>
                 </div>
-      ))}
-   </div>
-  )
+            ))}
+        </div>
+      )
 }
+  

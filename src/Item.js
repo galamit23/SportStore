@@ -1,23 +1,15 @@
 import React, { useState } from 'react'
 import EditItem from './EditItem'
 
-export default function Item({id,category,name,price,img}) {
+export default function Item({name,price,pic}) {
   
     const [edit,setedit] = useState(false);
     return (
     <div>
-        <h4>{category}</h4>
+      <h3>Test Item</h3>
+        <h3>{price}</h3>
         <h3>{name}</h3>
-        <button classname=""
-        onClick={()=>setedit(true)}>Edit</button>
-        {
-            edit && <EditItem
-            id={id}
-            editName={name}
-            editPrice={price}
-            editImg={img}
-            finishEdit ={ ()=>setedit(false)}/> }
-        
+        <h3>{pic}</h3>
     </div>
   )
 }

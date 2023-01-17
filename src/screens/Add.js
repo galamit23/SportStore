@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {addDoc, collection, Timestamp} from 'firebase/firestore'
+import {addDoc, collection} from 'firebase/firestore'
 import { db } from '../firebase-config'
 
 export default function Add({ onClose }) {
@@ -13,12 +13,10 @@ export default function Add({ onClose }) {
     e.preventDefault();
   
   try {
-    await addDoc(collection(db,'items'), {
-      category: category,
+    await addDoc(collection(db,'clothes'), {
       name: name,
       pic: pic,
-      price: price,
-      completed: false, created: Timestamp.now()  
+      price: price   
     })
     onClose();
   } catch (error){
@@ -27,7 +25,7 @@ export default function Add({ onClose }) {
 }
   
   return (
-    <div>
+    
       <from onSubmit={handleSubmit} className="form-control">
        <h4>Add new product</h4>
         <label>category:</label>
@@ -48,10 +46,10 @@ export default function Add({ onClose }) {
         <label>price:</label>
         <input className="form-control" type="text"
           onChange={(e) => setprice(e.target.value)} 
-          value={price} />
+          value={price}/>
 
       <button type="submit" className='alert-info'>Add product</button>
       </from>
-    </div>
+    
   )
 }

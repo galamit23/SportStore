@@ -8,7 +8,8 @@ import Item from './Item';
 export default function App() {
   return (
     <div>
-      {/* <Nav/> */} 
+      {/* <Nav/> */}
+    
     </div>
   )
 }

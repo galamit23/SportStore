@@ -7,14 +7,13 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase-config'
 // task - separate file for each task. 
 import Item from '../Item'
-import Add from './Add'
+
 
 export default function AllProducts() {
 
     // 1. Array to store all the tasks from the DB
-    const [tasks, settasks] = useState([]);
-    // Open & close a window of -Add a new task
-    const [newTask, setNewTask] = useState(false)
+    const [clothes, settasks] = useState([]);
+
 
     // Call the db, find the right data - and store in `tasks` - useState. 
     useEffect(()=>{
@@ -39,22 +38,22 @@ export default function AllProducts() {
         // call the function: 
         getTasks(db);
 
-    }, [tasks])
+    }, [clothes])
     
 
     return (
         <div className='container'>
     
-            <h2>Task manager</h2>
+            <h2>Task manager1</h2>
 
             {/* If array is not empty - loop over it and show each task: */}
-            {tasks.length > 0 && tasks.map(task => (
-                <div key={task.id}>
+            {clothes.length > 0 && clothes.map(clothe => (
+                <div key={clothe.id}>
                     <Item
-                    id={task.id}
-                    name={task.data.name}
-                    price={task.data.price}
-                    pic= {task.data.pic}/>
+                    id={clothe.id}
+                    name={clothe.data.name}
+                    price={clothe.data.price}
+                    pic= {clothe.data.pic}/>
                 </div>
             ))}
         </div>

@@ -6,10 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* background-image:  url(https://www1.lovethatdesign.com/wp-content/uploads/2016/12/20161208-Go-Sport-BRC-01.jpg);
+   /* background-image:  url(https://www1.lovethatdesign.com/wp-content/uploads/2016/12/20161208-Go-Sport-BRC-01.jpg);
   background-repeat: no-repeat ;
-  background-size: 80%; */
-
+  background-size: 80%;  */
 }
 
 
@@ -32,5 +31,29 @@ code {
   border-radius: 10%;
 
 }
+.card1{
+  border: solid;
+  margin: 50px;
+  display: inline;
+  justify-content: flex-start;
+  float: left;
+  width: 300px;
+  background-color: rgb(209, 203, 203);
+}
+.card1 p{
+  font-size: 18px;
+}
+.card1 h4{ 
+  font-size: 20px;
+}
+.card1 img{
+  height: 200px;
+  width: 200px;
+}
+.card1{
+
+}
+
+
 
 

@@ -44,9 +44,9 @@ export default function AllProducts() {
     return (
         <div className='container'>
     
-            <h2>Task manager1</h2>
+            <h2>All Products</h2>
 
-            {/* If array is not empty - loop over it and show each task: */}
+            {/* If array is not empty - loop over it and show each product: */}
             {clothes.length > 0 && clothes.map(clothe => (
                 <div key={clothe.id}>
                     <Item

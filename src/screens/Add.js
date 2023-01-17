@@ -1,55 +1,51 @@
-import React, {useState} from 'react'
-import {addDoc, collection} from 'firebase/firestore'
+import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import React, { useState } from 'react'
 import { db } from '../firebase-config'
 
-export default function Add({ onClose }) {
+export default function AddTask({ onClose }) {
 
-  const [category, setcategory] = useState('');
+  // store the previous data, and can update to new data from input.  
+  
   const [name, setname] = useState('');
   const [pic, setpic] = useState('');
   const [price, setprice] = useState('');
+  const [inStock, setinStock] = useState('');
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-  
-  try {
-    await addDoc(collection(db,'clothes'), {
-      name: name,
-      pic: pic,
-      price: price   
-    })
-    onClose();
-  } catch (error){
-    alert(error)
+
+    try{
+        // addDoc(collection, new document)
+        await addDoc(collection(db, 'clothes'), {
+          name: name, pic: pic, price: price, inStock: inStock
+        })
+    }catch(error){
+        alert(error)
+    }
   }
-}
-  
+
   return (
-    
-      <from onSubmit={handleSubmit} className="form-control">
-       <h4>Add new product</h4>
-        <label>category:</label>
-        <input className="form-control" type="text"
-          onChange={(e) => setcategory(e.target.value)} 
-          value={category} />
-        
-        <label>name:</label>
-        <input className="form-control" type="text"
-          onChange={(e) => setname(e.target.value)} 
-          value={name} />
+    <form onSubmit={handleSubmit} style={{backgroundColor:'lightgray', padding: 10, marginTop:3}}>
+            <h4 className='text-center'>Add a new task</h4>
+            <label>Add name</label>
+            <input type='text' onChange={(e)=>setname(e.target.value)}
+            className='form-control' value={name}/>
 
-        <label>pic:</label>
-        <input className="form-control" type="text"
-          onChange={(e) => setpic(e.target.value)} 
-          value={pic} />
+            <label>Add price</label>
+            <textarea type='text' onChange={(e)=>setprice(e.target.value)}
+            className='form-control' value={price}></textarea>
+            
+            <label>Add pic</label>
+            <textarea type='text' onChange={(e)=>setpic(e.target.value)}
+            className='form-control' value={pic}></textarea>
+            
+            <label>Add price</label>
+            <textarea type='text' onChange={(e)=>set(e.target.value)}
+            className='form-control' value={inStock}></textarea>
 
-        <label>price:</label>
-        <input className="form-control" type="text"
-          onChange={(e) => setprice(e.target.value)} 
-          value={price}/>
 
-      <button type="submit" className='alert-info'>Add product</button>
-      </from>
-    
+            
+            <input type='submit' className='btn btn-success mt-2'/>
+    </form>
   )
 }

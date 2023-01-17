@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import EditItem from './EditItem'
 
 export default function Item({name,price,pic}) {
   

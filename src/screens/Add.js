@@ -40,7 +40,7 @@ export default function AddTask({ onClose }) {
             className='form-control' value={pic}></textarea>
             
             <label>Add price</label>
-            <textarea type='text' onChange={(e)=>set(e.target.value)}
+            <textarea type='text' onChange={(e)=>setinStock(e.target.value)}
             className='form-control' value={inStock}></textarea>
 
 

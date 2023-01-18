@@ -5,20 +5,17 @@ import React, { useState, useEffect } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 // db - access to the db in firestore. 
 import { db } from '../firebase-config'
-// task - separate file for each task. 
 import Item from '../Item'
-
 
 export default function AllProducts() {
 
-    // 1. Array to store all the tasks from the DB
+    // 1. Array to store all the products from the DB
     const [clothes, setclothes] = useState([]);
     const [accessories, setaccessories] = useState([]);
     const [instruments, setinstruments] = useState([]);
 
-
-    // Call the db, find the right data - and store in `tasks` - useState. 
-    useEffect(()=>{
+    // Call the db, find the right data - and store in `getDB` - useState. 
+    useEffect( ()=>{
 
         const getDB = async (db) => {
             // collection() - return all the collection for that path. 
@@ -58,18 +55,14 @@ export default function AllProducts() {
             ))
             setinstruments(instruList)
         }
-
         // call the function: 
         getDB(db);
 
     }, [clothes],[accessories],[instruments])
-    
 
     return (
         <div className='container'>
-    
             <h2>All Products</h2>
-
             {/* If array is not empty - loop over it and show each product: */}
             {clothes.length > 0 && clothes.map(clothe => (
                 <div key={clothe.id}>
@@ -103,8 +96,7 @@ export default function AllProducts() {
                 </div>
             ))}
         </div>
-      )
-      
+      )  
 }
 
 

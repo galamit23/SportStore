@@ -12,33 +12,57 @@ import Item from '../Item'
 export default function AllProducts() {
 
     // 1. Array to store all the tasks from the DB
-    const [clothes, settasks] = useState([]);
+    const [clothes, setclothes] = useState([]);
+    const [accessories, setaccessories] = useState([]);
+    const [instruments, setinstruments] = useState([]);
 
 
     // Call the db, find the right data - and store in `tasks` - useState. 
     useEffect(()=>{
 
-        const getTasks = async (db) => {
+        const getDB = async (db) => {
             // collection() - return all the collection for that path. 
-            const TasksCol = collection(db, 'clothes');
+            const clCol = collection(db, 'clothes');
+            const acCol = collection(db, 'accessories');
+            const instruCol = collection(db, 'instruments');
 
             // getDocs() - return all documents for our collection
-            const tasksSnapshot = await getDocs(TasksCol);
+            const clSnapshot = await getDocs(clCol);
+            const acSnapshot = await getDocs(acCol);
+            const instruSnapshot = await getDocs(instruCol);
 
-            const tasksList = await tasksSnapshot.docs.map(doc =>(
+            const clList = await clSnapshot.docs.map(doc =>(
                 {
                     id: doc.id, 
                     // Retrieves all fields in the document as an object
                     data: doc.data()
                 }
             ))
-            settasks(tasksList)
+            setclothes(clList)
+
+            const acList = await acSnapshot.docs.map(doc =>(
+                {
+                    id: doc.id, 
+                    // Retrieves all fields in the document as an object
+                    data: doc.data()
+                }
+            ))
+            setaccessories(acList)
+
+            const instruList = await instruSnapshot.docs.map(doc =>(
+                {
+                    id: doc.id, 
+                    // Retrieves all fields in the document as an object
+                    data: doc.data()
+                }
+            ))
+            setinstruments(instruList)
         }
 
         // call the function: 
-        getTasks(db);
+        getDB(db);
 
-    }, [clothes])
+    }, [clothes],[accessories],[instruments])
     
 
     return (
@@ -54,6 +78,28 @@ export default function AllProducts() {
                     name={clothe.data.name}
                     price={clothe.data.price}
                     pic= {clothe.data.pic}/>
+                </div>
+            ))}
+
+             {/* If array is not empty - loop over it and show each product: */}
+             {accessories.length > 0 && accessories.map(accessorie => (
+                <div key={accessorie.id}>
+                    <Item
+                    id={accessorie.id}
+                    name={accessorie.data.name}
+                    price={accessorie.data.price}
+                    pic= {accessorie.data.pic}/>
+                </div>
+            ))}
+
+             {/* If array is not empty - loop over it and show each product: */}
+             {instruments.length > 0 && instruments.map(instrument => (
+                <div key={instrument.id}>
+                    <Item
+                    id={instrument.id}
+                    name={instrument.data.name}
+                    price={instrument.data.price}
+                    pic= {instrument.data.pic}/>
                 </div>
             ))}
         </div>

@@ -17,6 +17,7 @@ code {
     monospace;
 }
 
+/* ---------Home Page CSS --------- */
 .allpro{
   margin: 80px 0px 20px 800px;
   background-color: #2ad170; 
@@ -31,6 +32,15 @@ code {
   border-radius: 10%;
 
 }
+.logo{
+
+  width: 400px;
+  height: 150px;
+  margin-top: 50px;
+  margin-left: 400px;
+}
+
+/* --------ITEMS CSS -------- */
 .card1{
   border: solid;
   margin: 10px;
@@ -57,12 +67,55 @@ code {
   border-radius: 33px;
   
 }
-.logo{
 
-  width: 400px;
-  height: 150px;
-  margin-top: 50px;
-  margin-left: 400px;
+
+
+/* ----------Store page CSS ---------- */
+
+/* mainDiv */
+.store{
+  display: flex;
+  flex-direction: row ;
+  justify-content: center;
+}
+
+
+.clothe{
+  display: flex;
+  margin: 20px 20px 20px 0px;
+  background-image: url("https://threadcurve.com/wp-content/uploads/2020/06/Athletic-wear-for-men-june042020.jpg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  width: 300px;
+  height: 200px;
+
+
+}
+.instrument{
+  display: flex;
+  margin: 20px 20px 20px 0px;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/27/training-828764_1280.jpg");
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+
+}
+
+.accessories{
+  display: flex;
+  margin: 20px 20px 20px 0px;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/50eca9dae4b0a16d22fa61ea/1481461416481-NPHZT85MJBGWMUDF9A1J/image-asset.jpeg?format=1500w");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  width: 300px;
+  height: 200px;
+
+}
+#all div div h4{
+  margin: 3px 0px 0px 30px;
+  color: white;
+  
 }
 
 

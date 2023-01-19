@@ -35,7 +35,6 @@ export default function Footer() {
         {/* "https://mdbootstrap.com/*/}
         {/* <!-- Copyright --> */}
     </footer>
-
     </div>
   )
 }

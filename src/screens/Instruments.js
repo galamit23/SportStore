@@ -34,7 +34,7 @@ export default function Instruments() {
   
   return (
     <div>
-       <h2 style={{"color": "white"}}>instruments</h2>
+       <h2 style={{color: "white"}}>Instruments</h2>
        {instruments.length > 0 && instruments.map(instrument => (
                 <div key={instrument.id}>
                     <Item

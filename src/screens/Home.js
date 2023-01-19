@@ -8,7 +8,6 @@ export default function Home() {
     <div>
        <img src={Logosport} className="logo" alt="BigCo Inc. logo" />
       <Link className='nav-link' to='/allproducts'><button className='allpro'>Shop Now</button></Link>
-      <Footer/>
     </div>
   )
 }

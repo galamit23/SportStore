@@ -4,20 +4,29 @@ import { Link ,Outlet } from 'react-router-dom'
 
 export default function Store() {
   return (
-    <div className='container'>
+    <div className='container' id="all">
       <h2>Category</h2>
-      
+     
+      <div className='store'>
+      {/* Link 1 to Clothe */}
       <Link className='nav-link' to='/store/clothing'>
-        <button className='btn btn-primary m-2'>Clothing</button>
+        <div className='clothe'>
+        <h4>Clothe</h4>
+        </div>
       </Link>
-
+      {/* Link 2 to Accessories */}
       <Link className='nav-link' to='/store/accessories'>
-        <button className='btn btn-primary m-2'>Accessories</button>
+        <div className='accessories'>
+          <h4>Accessories</h4>
+        </div>
       </Link>
-
-      <Link className='nav-link' to='/store/Apparatus'>
-        <button className='btn btn-primary m-2'>Apparatus</button>
+      {/* Link 2 to Instruments */}
+      <Link className='nav-link' to='/store/instruments'>
+        <div className='instrument'>
+          <h4>Instruments</h4>
+        </div>
       </Link>
+      </div>
             
       <Outlet/>
     </div>

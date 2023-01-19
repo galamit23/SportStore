@@ -34,7 +34,7 @@ export default function Accessories() {
   
   return (
     <div>
-       <h2 style={{"color": "white"}}>Accessories</h2>
+       <h2 style={{color: "white"}}>Accessories</h2>
             {/* If array is not empty - loop over it and show each product: */}
             {accessories.length > 0 && accessories.map(accessorie => (
                 <div key={accessorie.id}>

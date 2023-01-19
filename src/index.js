@@ -19,6 +19,7 @@ import Clothing from './screens/Clothing'
 import Accessories from './screens/Accessories'
 import Apparatus from './screens/Instruments'
 import Footer from './Footer';
+import Instruments from './screens/Instruments';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,7 +31,7 @@ root.render(
       <Route path='/store' element={<Store/>}>
           <Route path='/store/clothing' element={<Clothing/>}/>
           <Route path='/store/accessories' element={<Accessories/>}/>
-          <Route path='/store/apparatus' element={<Apparatus/>}/>
+          <Route path='/store/instruments' element={<Instruments/>}/>
       </Route>
       <Route path='/allproducts' element={<AllProducts/>}/>
     </Routes>

@@ -35,7 +35,7 @@ export default function Clothing() {
   
   return (
     <div>
-       <h2>All Products</h2>
+       <h2 style={{color: "white"}}>Clothe</h2>
             {/* If array is not empty - loop over it and show each product: */}
             {clothes.length > 0 && clothes.map(clothe => (
                 <div key={clothe.id}>

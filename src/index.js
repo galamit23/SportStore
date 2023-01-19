@@ -18,6 +18,7 @@ import AllProducts from './screens/AllProducts';
 import Clothing from './screens/store-category/Clothing'
 import Accessories from './screens/store-category/Accessories'
 import Apparatus from './screens/store-category/Apparatus'
+import Footer from './Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,6 +34,7 @@ root.render(
       </Route>
       <Route path='/allproducts' element={<AllProducts/>}/>
     </Routes>
+    <Footer/>
   </BrowserRouter>
 );
 

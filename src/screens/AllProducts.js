@@ -62,7 +62,7 @@ export default function AllProducts() {
 
     return (
         <div className='container'>
-            <h2>All Products</h2>
+            <h2 style={{color: "wh"}}>All Products</h2>
             {/* If array is not empty - loop over it and show each product: */}
             {clothes.length > 0 && clothes.map(clothe => (
                 <div key={clothe.id}>
@@ -98,15 +98,3 @@ export default function AllProducts() {
         </div>
       )  
 }
-
-
-
-//  <div class="card" style="width: 18rem;">
-//  <img src="..." class="card-img-top" alt="...">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//      <a href="#" class="btn btn-primary">Go somewhere</a>
-//    </div>
-//  </div> 
-  

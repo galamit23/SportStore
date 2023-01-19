@@ -15,9 +15,9 @@ import Add from './screens/Add'
 import Store from './screens/Store'
 import AllProducts from './screens/AllProducts';
 
-import Clothing from './screens/store-category/Clothing'
-import Accessories from './screens/store-category/Accessories'
-import Apparatus from './screens/store-category/Apparatus'
+import Clothing from './screens/Clothing'
+import Accessories from './screens/Accessories'
+import Apparatus from './screens/Instruments'
 import Footer from './Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

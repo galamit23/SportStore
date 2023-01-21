@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase-config';
 
-
-// const handleDelete = async() => {
-//   let docRef = doc(db, 'clothes');
-//   try {
-//     await deleteDoc(docRef);
-//   } catch (error) {
-//     alert(error)
-//   }
-// }
-
-
 export default function Item({name,price,pic}) {
+  
+  // const handleDelete = async() => {
+  //   let docRef = doc(db, 'clothes');
+  //   try {
+  //     await deleteDoc(docRef);
+  //   } catch (error) {
+  //     alert(error)
+  //   }
+  // }
+
+  const navigate = useNavigate();
+  const dataName = {name}
+  const dataPic = {pic}
+  const dataPrice={price}
+
     return (
     <div className='card1' >
         <div style={{padding: "15px"}}>
@@ -21,7 +26,10 @@ export default function Item({name,price,pic}) {
           <img src={pic} alt="pc"></img>
           <p className="card-title">Price: {price}$</p>
           <button type="button" className="btn btn-danger py-1" >Delete</button>
-          <button type="button" className="btn btn-success py-1 pt-1" >Buy</button>
+          {/* <Link to=""> */}
+          <button type="button" className="btn btn-success py-1 pt-1"
+           onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice}})} >Buy</button>
+          {/* </Link> */}
         </div>
     </div>
   )

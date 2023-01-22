@@ -1,8 +1,8 @@
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import { addDoc, collection} from 'firebase/firestore';
 import React, { useState } from 'react'
 import { db } from '../firebase-config'
 
-export default function AddTask({ onClose }) {
+export default function AddTask() {
 
   // store the previous data, and can update to new data from input.  
   
@@ -17,7 +17,7 @@ export default function AddTask({ onClose }) {
     try{
         // addDoc(collection, new document)
         await addDoc(collection(db, 'clothes'), {
-          name: name, pic: pic, price: price
+          name: name, pic: pic, price: price ,about : about
         })
     }catch(error){
         alert(error)
@@ -27,9 +27,9 @@ export default function AddTask({ onClose }) {
   return (
     <form onSubmit={handleSubmit} id="form">
 
-            <h4 className='text-center'>Add Item</h4>
+            <h2 className='text-center'>Add New Item</h2>
             
-            <lable>Category</lable>
+            <label>Category</label>
             <br/>
             <select name="category" id="ct1">
             <option value="">--Choose an option--</option>
@@ -52,11 +52,11 @@ export default function AddTask({ onClose }) {
             <input type='text' onChange={(e)=>setprice(e.target.value)}
             className='form-control' value={price}/>
             
-            <lable>About</lable>
-            <textarea type='text' onChange={(e)=>setabout(e.target.value)}
+            <label>About</label>
+            <textarea type='text' placeholder='Type here...' onChange={(e)=>setabout(e.target.value)}
             className='form-control' value={about}/> 
 
-            <input type='submit' className='btn btn-success mt-2'/>
+            <input type='submit'  style={{width: "100px", margin: "80px"}} className='btn btn-success mt-2'/>
             
     </form>
     

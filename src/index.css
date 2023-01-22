@@ -186,10 +186,14 @@ code {
   padding-top: 20px;
   color: white
 }
+#form label{
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-decoration: underline;
+}
 
 #form input{
   width: 300px;
-  margin-top: 10px;
 
 }
 #form textarea{

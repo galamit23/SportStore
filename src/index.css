@@ -128,7 +128,7 @@ code {
 
 #show img{
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   float: left;
   height: 400px;
   width: 400px;
@@ -143,18 +143,64 @@ code {
 }
 
 #show div{
-  display: flex;
-  margin-left: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 500px;
+  height: 400px;
+  display:inline-block;
+  background-color: rgba(0, 0, 0, 0.457);
 
 }
+/* Price */
+#show div h1{
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  text-decoration: underline white;
+  text-decoration-thickness: 0.5px;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
+
+}
+
 #show div button{
-  margin-top: 100px;
-  margin-left: 60px;
+  margin-top: 10px 00px 10px 60px;
+  /* margin-left: 60px; */
   background-color: #2ad170; 
   color: white;
   border-radius: 30px;
   border-style: hidden;
+  float:inherit;
   
+}
+/* -------FORM CSS----- */
+
+#form{
+  background-color: rgba(0, 0, 0, 0.457);
+  margin: center;
+  padding-left: 100px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: white
+}
+
+#form input{
+  width: 300px;
+  margin-top: 10px;
+
+}
+#form textarea{
+  width: 400px;
+  height: 100px;
+}
+
+/* form pic */
+#form div img{
+  height: 200px;
+  width: 200px;
 }
 
 

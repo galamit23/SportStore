@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function Footer() {
+
+  
   return (
     <div>
     <footer className="bg-dark text-center text-white">
@@ -34,6 +36,7 @@ export default function Footer() {
         <div className="text-center p-3" style={{"background-color": "rgba(0, 0, 0, 0.2)"}}>Gal Amit  |  Aviel Mutai</div>
         {/* "https://mdbootstrap.com/*/}
         {/* <!-- Copyright --> */}
+
     </footer>
     </div>
   )

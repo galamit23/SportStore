@@ -9,6 +9,7 @@ export default function AddTask({ onClose }) {
   const [name, setname] = useState('');
   const [pic, setpic] = useState('');
   const [price, setprice] = useState('');
+  const [about, setabout] = useState('');
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -24,22 +25,24 @@ export default function AddTask({ onClose }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form-group" style={{backgroundColor:'lightgray', padding: 10, marginTop:3}}>
+    <form onSubmit={handleSubmit} id="form">
+
             <h4 className='text-center'>Add Item</h4>
             
             <lable>Category</lable>
             <br/>
             <select name="category" id="ct1">
-            <option value="">--Please choose an option--</option>
+            <option value="">--Choose an option--</option>
             <option value="Clothing">Clothe</option>
             <option value="Accessories">Accessories</option>
             <option value="Instruments">Instruments</option>
             </select>
+            
             <br/>
 
             <label>Name</label>
             <input type='text' onChange={(e)=>setname(e.target.value)}
-            className='form-control' value={name}/>
+            className='form-control' style={{width: "300px"}} value={name}/>
             
             <label>Image</label>
             <input type='text' onChange={(e)=>setpic(e.target.value)}
@@ -49,7 +52,13 @@ export default function AddTask({ onClose }) {
             <input type='text' onChange={(e)=>setprice(e.target.value)}
             className='form-control' value={price}/>
             
+            <lable>About</lable>
+            <textarea type='text' onChange={(e)=>setabout(e.target.value)}
+            className='form-control' value={about}/> 
+
             <input type='submit' className='btn btn-success mt-2'/>
+            
     </form>
+    
   )
 }

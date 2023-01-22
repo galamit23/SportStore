@@ -27,10 +27,10 @@ export default function Item({name,price,pic,about}) {
           <img src={pic} alt="pc"></img>
           <p className="card-title">Price: {price}$</p>
           <button type="button" className="btn btn-danger py-1" >Delete</button>
-          {/* <Link to=""> */}
+          
           <button type="button" className="btn btn-success py-1 pt-1"
            onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice,dataAbout}})} >Buy</button>
-          {/* </Link> */}
+
         </div>
     </div>
   )

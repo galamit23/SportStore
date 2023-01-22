@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase-config';
 
-export default function Item({name,price,pic}) {
+export default function Item({name,price,pic,about}) {
   
   // const handleDelete = async() => {
   //   let docRef = doc(db, 'clothes');
@@ -18,6 +18,7 @@ export default function Item({name,price,pic}) {
   const dataName = {name}
   const dataPic = {pic}
   const dataPrice={price}
+  const dataAbout={about}
 
     return (
     <div className='card1' >
@@ -28,7 +29,7 @@ export default function Item({name,price,pic}) {
           <button type="button" className="btn btn-danger py-1" >Delete</button>
           {/* <Link to=""> */}
           <button type="button" className="btn btn-success py-1 pt-1"
-           onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice}})} >Buy</button>
+           onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice,dataAbout}})} >Buy</button>
           {/* </Link> */}
         </div>
     </div>

@@ -118,5 +118,45 @@ code {
   
 }
 
+/* ----------Show Items CSS ---------- */
+#show{
+  padding-left: 80px;
+  padding-top: 40px;
+  color: white;
+
+}
+
+#show img{
+  display: flex;
+  justify-content: flex-start;
+  float: left;
+  height: 400px;
+  width: 400px;
+  border-radius: 10%;
+  
+}
+#show h1{
+  padding-left: 20px;
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 1px;
+
+}
+
+#show div{
+  display: flex;
+  margin-left: 20px;
+
+}
+#show div button{
+  margin-top: 100px;
+  margin-left: 60px;
+  background-color: #2ad170; 
+  color: white;
+  border-radius: 30px;
+  border-style: hidden;
+  
+}
+
+
 
 

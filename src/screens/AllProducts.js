@@ -70,7 +70,8 @@ export default function AllProducts() {
                     id={clothe.id}
                     name={clothe.data.name}
                     price={clothe.data.price}
-                    pic= {clothe.data.pic}/>
+                    pic= {clothe.data.pic}
+                    about={clothe.data.about}/>
                 </div>
             ))}
 

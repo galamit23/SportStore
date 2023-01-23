@@ -9,7 +9,7 @@ export default function ShowItem() {
     const nevigate = useNavigate();
     const [edit, setedit] = useState(false)
   
-  
+    console.log(location.state.dataID.id);
     return (
     <div id="show">
     <h1> Item : {location.state.dataName.name}</h1>
@@ -21,7 +21,7 @@ export default function ShowItem() {
     <p>About: {location.state.dataAbout.about}</p> 
     
     <button type="button" onClick={()=>nevigate("/")}>Add to cart</button>
-    </div>
+    
 
     <button className='btn btn-primary' onClick={()=>setedit(true)}>Edit</button>
       {edit && <EditItem
@@ -30,8 +30,9 @@ export default function ShowItem() {
       price={location.state.dataPrice.price}
       pic= {location.state.dataPic.pic}
       about={location.state.dataAbout.about}
+      collection={location.state.dataCol.collection}
       finishEdit={()=>setedit(false)} />}
-
+    </div>
 
     </div>
   )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { doc, updateDoc } from 'firebase/firestore'
+import { collection, doc, updateDoc } from 'firebase/firestore'
 import { db } from './firebase-config'
 
-export default function EditItem({id,editName,editPrice,editImg}) {
+export default function EditItem({id,editName,editPrice,editImg,finishEdit}) {
   
     const [name,setName] = useState(editName);
     const [price,setPrice] = useState(editPrice);
@@ -10,14 +10,40 @@ export default function EditItem({id,editName,editPrice,editImg}) {
     
     const handleUpdate= async(e) => {
         e.preventDefault();
-        const itemDocRef = doc(db, 'items',id);
+       
+        const ColDocRef = doc(db, 'clothes' ,id);
+        const InsmDocRef = doc(db, 'instruments' ,id);
+        const AccDocRef = doc(db, 'accessories' ,id);
 
         try{
-            await updateDoc(itemDocRef, {
+            await updateDoc(ColDocRef, {
                 name: name,
-                price: price,
-                img: img
+                // price: price,
+                // img: img
             })
+            finishEdit()
+        }catch(error){
+            alert(error)
+        }
+
+        try{
+            await updateDoc(InsmDocRef, {
+                name: name,
+                // price: price,
+                // img: img
+            })
+            finishEdit()
+        }catch(error){
+            alert(error)
+        }
+
+        try{
+            await updateDoc(AccDocRef, {
+                name: name,
+                // price: price,
+                // img: img
+            })
+            finishEdit()
         }catch(error){
             alert(error)
         }

@@ -61,7 +61,7 @@ export default function AllProducts() {
     }, [clothes],[accessories],[instruments])
 
     return (
-        <div className='container'>
+        <div id="container" >
             <h2 style={{color: "white"}}><u>All Products</u></h2>
             {/* If array is not empty - loop over it and show each product: */}
             {clothes.length > 0 && clothes.map(clothe => (
@@ -71,7 +71,8 @@ export default function AllProducts() {
                     name={clothe.data.name}
                     price={clothe.data.price}
                     pic= {clothe.data.pic}
-                    about={clothe.data.about}/>
+                    about={clothe.data.about}
+                    collection={clothes}/>
                 </div>
             ))}
 
@@ -82,7 +83,8 @@ export default function AllProducts() {
                     id={accessorie.id}
                     name={accessorie.data.name}
                     price={accessorie.data.price}
-                    pic= {accessorie.data.pic}/>
+                    pic= {accessorie.data.pic}
+                    collection={accessories}/>
                 </div>
             ))}
 
@@ -93,7 +95,8 @@ export default function AllProducts() {
                     id={instrument.id}
                     name={instrument.data.name}
                     price={instrument.data.price}
-                    pic= {instrument.data.pic}/>
+                    pic= {instrument.data.pic}
+                    collection={instruments}/>
                 </div>
             ))}
         </div>

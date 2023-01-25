@@ -5,7 +5,7 @@ export default function Footer() {
   
   return (
     <div>
-    <footer className="bg-dark text-center text-white">
+    <footer id="foot" className="bg-dark text-center text-white footer--pin">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous"/>
         {/* <!-- Grid container --> */}
         <div className="container p-4 pb-0">

@@ -4,7 +4,7 @@ import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from './firebase-config';
 
 
-export default function Item({id, name,price,pic,about}) {
+export default function Item({id, name,price,pic,about,collection}) {
   
   
   const navigate = useNavigate();
@@ -12,6 +12,8 @@ export default function Item({id, name,price,pic,about}) {
   const dataPic = {pic}
   const dataPrice={price}
   const dataAbout={about}
+  const dataID={id}
+  const dataCol={collection}
 
 //---------DELETE function to every products in AllProducts--------- 
   const handleDelete = async() => {
@@ -37,7 +39,7 @@ export default function Item({id, name,price,pic,about}) {
           <button type="button" className="btn btn-danger py-1" onClick={()=>handleDelete()} >Delete</button>
           
           <button type="button" className="btn btn-success py-1 pt-1"
-           onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice,dataAbout}})} >Buy</button>
+           onClick={()=>navigate("/showitem", {state: {dataName,dataPic,dataPrice,dataAbout,dataID, dataCol}})} >Buy</button>
 
         </div>
     </div>

@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-image: url("https://cdn.pixabay.com/photo/2016/10/03/13/04/artificial-turf-1711556_1280.jpg");
-  
 
 }
 
@@ -18,7 +17,7 @@ code {
 }
 
 /* ---------Home Page CSS --------- */
-.allpro{
+.shopnow{
   background-color: #2ad170; 
   border: 2 solid;
   border-color: white;
@@ -29,17 +28,25 @@ code {
   display: inline-block;
   font-size: 16px;
   border-radius: 10%;
-
 }
 .logo{
-
-  width: 400px;
-  height: 150px;
+  float: right;
+  width: 200px;
+  height: 200px;
 }
+
 .home{
   margin: 100px 100px;
   max-height: 50px;
+  position: relative;
 }
+footer{
+  position: absolute;
+  bottom: 0;
+  height: 25%;
+  width: 100%;    
+}
+
 
 /* --------ITEMS CSS -------- */
 .card1{
@@ -66,7 +73,6 @@ code {
   height: 200px;
   width: 200px;
   border-radius: 33px;
-  
 }
 
 
@@ -124,7 +130,6 @@ code {
   padding-left: 80px;
   padding-top: 40px;
   color: white;
-
 }
 
 #show img{
@@ -203,6 +208,7 @@ code {
   height: 200px;
   width: 200px;
 }
+
 
 
 

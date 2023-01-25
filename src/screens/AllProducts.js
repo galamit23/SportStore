@@ -7,12 +7,15 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase-config'
 import Item from '../Item'
 
+
 export default function AllProducts() {
 
     // 1. Array to store all the products from the DB
     const [clothes, setclothes] = useState([]);
     const [accessories, setaccessories] = useState([]);
     const [instruments, setinstruments] = useState([]);
+   
+    
 
     // Call the db, find the right data - and store in `getDB` - useState. 
     useEffect( ()=>{
@@ -59,6 +62,7 @@ export default function AllProducts() {
         getDB(db);
 
     }, [clothes],[accessories],[instruments])
+
 
     return (
         <div className='container'>

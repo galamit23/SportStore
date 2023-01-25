@@ -19,6 +19,7 @@ export default function ShowItem() {
     <p>About: {location.state.dataAbout.about}</p> 
     
     <button type="button" onClick={()=>nevigate("/")}>Add to cart</button>
+    
     </div>
 
 

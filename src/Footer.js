@@ -33,7 +33,7 @@ export default function Footer() {
         {/* <!-- Grid container --> */}
 
         {/* <!-- Copyright --> */}
-        <div className="text-center p-3" style={{"background-color": "rgba(0, 0, 0, 0.2)"}}>Gal Amit  |  Aviel Mutai</div>
+        <div className="text-center p-3" style={{"background-color": "rgba(0, 0, 0, 0.2)"}}>Gal Amit |  Aviel Mutai</div>
         {/* "https://mdbootstrap.com/*/}
         {/* <!-- Copyright --> */}
 

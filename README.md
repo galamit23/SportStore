@@ -1,12 +1,17 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+# Welcome to out Sport-Store
+we have here three main pages
+## Home page
+That will lead you to pages of all out products and the get in every product
+to see his detail by cliking on "buy"
+## Add page
+You have the ability to add new product with every new detail the you want,
+ name
+ category
+ img
+ price
+ about
+ Then click submit and it will be save in all product page.
+#### 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
